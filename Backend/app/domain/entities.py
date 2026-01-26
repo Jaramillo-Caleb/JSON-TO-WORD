@@ -1,17 +1,17 @@
 from dataclasses import dataclass
-from typing import List
+from typing import List, Optional
 
 @dataclass
 class AnswerOption:
     text: str
     is_correct: bool
-    rationale: str
+    rationale: Optional[str] = None
 
 @dataclass
 class Question:
     question: str
     answer_options: List[AnswerOption]
-    hint: str
+    hint: Optional[str] = None
 
 @dataclass
 class Quiz:
