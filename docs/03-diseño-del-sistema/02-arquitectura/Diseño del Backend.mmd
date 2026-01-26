@@ -1,0 +1,22 @@
+---
+config:
+  theme: redux-dark
+---
+classDiagram
+    class API_Entrypoint {
+        +post_convert_json()
+    }
+    class UseCase_Converter {
+        +execute(json_data)
+    }
+    class Domain_Model {
+        +Pregunta
+        +Respuesta
+    }
+    class Infrastructure_WordGen {
+        +create_docx_files()
+    }
+
+    API_Entrypoint --> UseCase_Converter : Llama
+    UseCase_Converter --> Domain_Model : Mapea datos
+    UseCase_Converter --> Infrastructure_WordGen : Solicita creación

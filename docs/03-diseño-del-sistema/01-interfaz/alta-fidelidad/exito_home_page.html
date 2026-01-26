@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html class="dark" lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0d59f2",
+                        "dark-bg": "#06181b",
+                        "darker-bg": "#0a1118",
+                        "card-bg": "#1B2A3D",
+                        "inner-bg": "#22364f",
+                        "success": "#10b981"
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+    <title>JSON TO WORD - ¡Éxito!</title>
+</head>
+
+<body class="bg-gradient-to-b from-dark-bg to-darker-bg font-display text-white min-h-screen flex flex-col">
+
+    <div
+        class="fixed bottom-8 right-8 z-50 flex items-center gap-2 bg-[#4E342E] text-[#F5E9DA] px-5 py-3 rounded-full shadow-2xl border border-[#3E2723] transition-all duration-300 ease-out hover:px-7 group">
+        <span class="material-icons text-[#D7B899] transition-transform duration-300 group-hover:rotate-12">
+            coffee
+        </span>
+
+        <span class="font-bold text-sm tracking-wide whitespace-nowrap">
+            Invítame a un café
+        </span>
+    </div>
+
+
+    <header class="pt-20 pb-12 px-6 text-center">
+        <h1 class="text-5xl md:text-6xl font-bold tracking-tight mb-4">
+            JSON TO WORD
+        </h1>
+        <p class="text-slate-300 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+            Convierte tus archivos JSON de NotebookLM en documentos Word profesionales para exámenes y hojas de
+            respuestas.
+        </p>
+    </header>
+
+    <main class="flex-grow px-4 pb-20">
+        <div class="max-w-4xl mx-auto bg-card-bg rounded-[2.5rem] overflow-hidden shadow-2xl border border-white/10">
+
+            <div
+                class="relative bg-gradient-to-r from-success/20 via-transparent to-transparent p-8 md:p-12 flex flex-col md:flex-row items-center gap-8 border-b border-white/5">
+                <div
+                    class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] pointer-events-none">
+                </div>
+
+                <div class="relative shrink-0">
+                    <div
+                        class="w-24 h-24 bg-success flex items-center justify-center rounded-3xl -rotate-6 shadow-[0_0_30px_rgba(16,185,129,0.3)]">
+                        <span class="material-icons text-white text-5xl rotate-6">task_alt</span>
+                    </div>
+                </div>
+
+                <div class="text-center md:text-left relative z-10">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-2">¡Archivos Listos!</h2>
+                    <p class="text-slate-400 text-lg">Tu JSON se procesó a la perfección. Descarga tus documentos a
+                        continuación.</p>
+                </div>
+            </div>
+
+            <div class="p-8 md:p-12">
+                <div class="max-w-2xl mx-auto flex flex-col gap-4 mb-12">
+
+                    <button class="group flex items-center gap-6 p-5
+                             bg-inner-bg/30 border border-white/5
+                             rounded-2xl text-left relative overflow-hidden
+                             hover:bg-inner-bg/60 hover:border-primary/30 transition-all">
+                        <div class="absolute left-0 top-0 bottom-0 w-1
+                               bg-primary opacity-60 group-hover:opacity-100 transition-opacity"></div>
+
+                        <div class="shrink-0 w-12 h-12 bg-primary/10 rounded-xl
+                               flex items-center justify-center text-primary">
+                            <span class="material-icons text-2xl">description</span>
+                        </div>
+
+                        <div class="flex-grow">
+                            <div class="flex items-center gap-2">
+                                <h3 class="font-bold text-white text-lg">Documento de Examen</h3>
+                                <span class="text-[10px] bg-white/5 px-2 py-0.5 rounded text-slate-400 font-mono">
+                                    .docx
+                                </span>
+                            </div>
+                            <p class="text-slate-500 text-sm">
+                                Listo para imprimir y entregar a estudiantes.
+                            </p>
+                        </div>
+
+                        <div class="shrink-0 w-10 h-10 rounded-full border border-white/10
+                               flex items-center justify-center
+                               group-hover:bg-primary group-hover:text-white transition-all">
+                            <span class="material-icons text-xl">download</span>
+                        </div>
+                    </button>
+
+                    <button class="group flex items-center gap-6 p-5
+                             bg-inner-bg/30 border border-white/5
+                             rounded-2xl text-left relative overflow-hidden
+                             hover:bg-inner-bg/60 hover:border-primary/30 transition-all">
+                        <div class="absolute left-0 top-0 bottom-0 w-1
+                               bg-primary opacity-60 group-hover:opacity-100 transition-opacity"></div>
+
+                        <div class="shrink-0 w-12 h-12 bg-primary/10 rounded-xl
+                               flex items-center justify-center text-primary">
+                            <span class="material-icons text-2xl">fact_check</span>
+                        </div>
+
+                        <div class="flex-grow">
+                            <div class="flex items-center gap-2">
+                                <h3 class="font-bold text-white text-lg">Hoja de Respuestas</h3>
+                                <span class="text-[10px] bg-white/5 px-2 py-0.5 rounded text-slate-400 font-mono">
+                                    .docx
+                                </span>
+                            </div>
+                            <p class="text-slate-500 text-sm">
+                                Incluye claves y justificaciones.
+                            </p>
+                        </div>
+
+                        <div class="shrink-0 w-10 h-10 rounded-full border border-white/10
+                               flex items-center justify-center
+                               group-hover:bg-primary group-hover:text-white transition-all">
+                            <span class="material-icons text-xl">download</span>
+                        </div>
+                    </button>
+
+                </div>
+
+
+                <div class="flex flex-col md:flex-row items-center justify-center gap-6 pt-8 border-t border-white/5">
+                    <a href="index.html"
+                        class="flex items-center gap-2 text-slate-400 hover:text-white transition-colors font-medium">
+                        <span class="material-icons">add_circle_outline</span>
+                        Convertir otro archivo
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-5xl mx-auto mt-32">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">Cómo funciona</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div class="flex flex-col items-center text-center">
+                    <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-6 shadow-xl">
+                        <span class="material-icons text-slate-800 text-3xl font-bold">upload_file</span>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3">Importa tu JSON</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Arrastra, pega o selecciona tu archivo JSON de NotebookLM directamente en nuestra plataforma.
+                    </p>
+                </div>
+
+                <div class="flex flex-col items-center text-center">
+                    <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-6 shadow-xl">
+                        <span class="material-icons text-slate-800 text-3xl font-bold">settings</span>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3">Procesamiento automático</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Nuestro sistema convierte el JSON en documentos Word estructurados con formato profesional.
+                    </p>
+                </div>
+
+                <div class="flex flex-col items-center text-center">
+                    <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-6 shadow-xl">
+                        <span class="material-icons text-slate-800 text-3xl font-bold">file_download</span>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3">Descarga tus archivos</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Obtén dos documentos Word: uno con las respuestas completas y otro parcial para tus estudiantes.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-slate-900 py-10 px-4 text-slate-400 border-t border-slate-800">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-center items-center gap-6 text-sm">
+
+            <div class="flex items-center gap-2">
+                <span class="material-icons text-lg">mail</span>
+                <span>jaramillocaleb3@gmail.com</span>
+            </div>
+
+            <span class="hidden md:inline text-slate-700">|</span>
+
+            <div class="flex items-center gap-2">
+                <span class="material-icons text-lg">call</span>
+                <span>+57 300 384 0344</span>
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+---
+config:
+  theme: redux-dark
+  layout: dagre
+---
+flowchart TB
+ subgraph subGraph0["App Root (App.jsx)"]
+        Header["Header Component"]
+        Main["Main Layout"]
+        Footer["Footer Component"]
+        FloatBtn["Floating Donation Button"]
+  end
+ subgraph subGraph1["Main Layout (Vistas)"]
+        Hero["Hero: Título y Propósito"]
+        Instructions["How it Works: Pasos 1-2-3"]
+        Converter["Converter Container"]
+  end
+ subgraph subGraph2["Converter Container (Lógica)"]
+        Dropzone["File Uploader: Drag & Drop"]
+        Status["Status Handler: Cargando/Error"]
+        DownloadSection["Download Actions: Botones Word"]
+  end
+ subgraph subGraph3["Modals & Global"]
+        QRModal["Donation Modal: QRs Nequi/DaviPlata"]
+        Notification["Toast/Alerts: Feedback"]
+  end
+    Header --- Main
+    Main --- Footer
+    FloatBtn ==> QRModal
+    Dropzone -- Envía JSON --> API_Service["API Service: Axios/Fetch"]
+    API_Service -- Recibe Blobs --> DownloadSection
+    Converter --- Status
+    Status --- Notification

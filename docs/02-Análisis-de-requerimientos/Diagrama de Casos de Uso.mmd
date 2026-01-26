@@ -1,0 +1,23 @@
+---
+config:
+  theme: redux-dark
+---
+graph TD
+    Educador((Educador / Formador))
+    
+    subgraph "Servidor Python (Flask/FastAPI)"
+        UC1[Cargar archivo JSON]
+        UC2[Procesar con python-docx]
+        UC3[Descargar Cuestionario]
+        UC4[Descargar Solucionario]
+        UC5[Ver QRs de Donación]
+        
+        UC2 -.-> |Incluye| UC1
+        UC5 -.-> |Muestra| QR1[QR Nequi]
+        UC5 -.-> |Muestra| QR2[QR DaviPlata]
+    end
+    
+    Educador --> UC1
+    Educador --> UC3
+    Educador --> UC4
+    Educador --> UC5

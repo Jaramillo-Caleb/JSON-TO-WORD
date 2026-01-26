@@ -1,0 +1,15 @@
+---
+config:
+  theme: redux-dark-color
+---
+sequenceDiagram
+    participant U as Educador
+    participant F as Frontend (React)
+    participant B as Backend (Python)
+    U->>F: Arrastra JSON de NotebookLM
+    F->>B: POST /convert (JSON Body)
+    Note over B: Clean Arch: Valida, Mapea y Genera .docx
+    B-->>F: Retorna Files (Blob/Stream)
+    F-->>U: Muestra botones "Descargar Cuestionario/Solucionario"
+    U->>F: Clic en "Invítame un café"
+    F->>U: Muestra Modal con QRs (Nequi/DaviPlata)

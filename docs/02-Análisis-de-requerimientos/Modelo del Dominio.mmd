@@ -1,0 +1,29 @@
+---
+config:
+  theme: redux-dark
+---
+classDiagram
+    class Educador {
+        +SubirArchivo()
+        +EscanearQR()
+    }
+    
+    class ProcesadorPython {
+        +Library python-docx
+        +ExtraerContenido(json)
+        +ConstruirWord()
+    }
+    
+    class Donacion {
+        +Imagen QR_Nequi
+        +Imagen QR_DaviPlata
+    }
+    
+    class DocumentoWord {
+        +String titulo
+        +Descargar()
+    }
+
+    Educador --> ProcesadorPython : Envía JSON
+    ProcesadorPython --> DocumentoWord : Retorna .docx
+    Educador --> Donacion : Consulta medios de pago

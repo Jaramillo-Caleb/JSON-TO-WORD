@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html class="dark" lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#0d59f2",
+            "dark-bg": "#06181b",
+            "darker-bg": "#0a1118",
+            "card-bg": "#1B2A3D",
+            "inner-bg": "#22364f",
+            "danger": "#ff4d4d"
+          },
+          fontFamily: {
+            "display": ["Lexend", "sans-serif"]
+          },
+        },
+      },
+    }
+  </script>
+  <title>JSON to Word - Error</title>
+</head>
+
+<body class="bg-gradient-to-b from-dark-bg to-darker-bg font-display text-white min-h-screen flex flex-col">
+
+  <div
+    class="fixed bottom-8 right-8 z-50 flex items-center gap-2 bg-[#4E342E] text-[#F5E9DA] px-5 py-3 rounded-full shadow-2xl border border-[#3E2723] transition-all duration-300 ease-out hover:px-7 group">
+    <span class="material-icons text-[#D7B899] transition-transform duration-300 group-hover:rotate-12">
+      coffee
+    </span>
+
+    <span class="font-bold text-sm tracking-wide whitespace-nowrap">
+      Invítame a un café
+    </span>
+  </div>
+
+
+
+  <header class="pt-20 pb-12 px-6 text-center">
+    <h1 class="text-5xl md:text-6xl font-bold tracking-tight mb-4">
+      JSON TO WORD
+    </h1>
+    <p class="text-slate-300 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+      Convierte tus archivos JSON de NotebookLM en documentos Word profesionales para exámenes y hojas de respuestas.
+    </p>
+  </header>
+
+  <main class="flex-grow px-4 pb-20">
+    <div class="max-w-4xl mx-auto bg-card-bg rounded-[2.5rem] overflow-hidden shadow-2xl border border-white/10">
+
+      <div
+        class="relative bg-gradient-to-r from-danger/20 via-transparent to-transparent p-8 md:p-12 flex flex-col md:flex-row items-center gap-8 border-b border-white/5">
+        <div
+          class="absolute inset-0 opacity-5 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] pointer-events-none">
+        </div>
+
+        <div class="relative shrink-0">
+          <div
+            class="w-24 h-24 bg-danger flex items-center justify-center rounded-3xl rotate-12 shadow-[0_0_30px_rgba(255,77,77,0.3)]">
+            <span class="material-icons text-white text-5xl -rotate-12">priority_high</span>
+          </div>
+        </div>
+
+        <div class="text-center md:text-left relative z-10">
+          <h2 class="text-3xl md:text-4xl font-bold text-white mb-2">¡Algo no encaja!</h2>
+          <p class="text-slate-400 text-lg max-w-md">
+            Tu JSON parece tener algunos errores de estructura que impiden la conversión.
+          </p>
+        </div>
+      </div>
+
+      <div class="p-8 md:p-12">
+        <h3 class="text-xs font-bold uppercase tracking-[0.2em] text-primary mb-6">Guía rápida de solución</h3>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
+          <div
+            class="bg-inner-bg/50 p-5 rounded-2xl border border-white/5 hover:border-danger/30 transition-colors group">
+            <div class="flex items-start gap-4">
+              <span
+                class="text-danger font-bold text-xl opacity-40 group-hover:opacity-100 transition-opacity">01</span>
+              <div>
+                <p class="text-white font-semibold text-sm mb-1">Comas rebeldes</p>
+                <p class="text-slate-400 text-xs leading-relaxed">Revisa si falta una coma entre objetos o si sobra una
+                  al final del último elemento.</p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-inner-bg/50 p-5 rounded-2xl border border-white/5 hover:border-danger/30 transition-colors group">
+            <div class="flex items-start gap-4">
+              <span
+                class="text-danger font-bold text-xl opacity-40 group-hover:opacity-100 transition-opacity">02</span>
+              <div>
+                <p class="text-white font-semibold text-sm mb-1">Comillas dobles</p>
+                <p class="text-slate-400 text-xs leading-relaxed">JSON requiere estrictamente comillas dobles <span
+                    class="text-primary">" "</span> para todas las llaves y valores.</p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-inner-bg/50 p-5 rounded-2xl border border-white/5 hover:border-danger/30 transition-colors group">
+            <div class="flex items-start gap-4">
+              <span
+                class="text-danger font-bold text-xl opacity-40 group-hover:opacity-100 transition-opacity">03</span>
+              <div>
+                <p class="text-white font-semibold text-sm mb-1">Cierre de llaves</p>
+                <p class="text-slate-400 text-xs leading-relaxed">Cada <span class="text-primary">{</span> debe tener su
+                  pareja <span class="text-primary">}</span>. Un cierre faltante rompe todo el archivo.</p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-inner-bg/50 p-5 rounded-2xl border border-white/5 hover:border-danger/30 transition-colors group">
+            <div class="flex items-start gap-4">
+              <span
+                class="text-danger font-bold text-xl opacity-40 group-hover:opacity-100 transition-opacity">04</span>
+              <div>
+                <p class="text-white font-semibold text-sm mb-1">Formato NotebookLM</p>
+                <p class="text-slate-400 text-xs leading-relaxed">Asegúrate de copiar el JSON crudo (raw) generado por
+                  la IA sin textos adicionales.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="index.html"
+            class="flex-grow bg-primary hover:bg-primary/80 text-white py-4 rounded-2xl text-lg font-bold shadow-lg shadow-primary/20 transition-all flex items-center justify-center gap-3">
+            <span class="material-icons">refresh</span>
+            Intentar de nuevo
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="max-w-5xl mx-auto mt-32">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">Cómo funciona</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div class="flex flex-col items-center text-center">
+          <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-6 shadow-xl">
+            <span class="material-icons text-slate-800 text-3xl font-bold">upload_file</span>
+          </div>
+          <h4 class="text-xl font-bold mb-3">Importa tu JSON</h4>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Arrastra, pega o selecciona tu archivo JSON de NotebookLM directamente en nuestra plataforma.
+          </p>
+        </div>
+
+        <div class="flex flex-col items-center text-center">
+          <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-6 shadow-xl">
+            <span class="material-icons text-slate-800 text-3xl font-bold">settings</span>
+          </div>
+          <h4 class="text-xl font-bold mb-3">Procesamiento automático</h4>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Nuestro sistema convierte el JSON en documentos Word estructurados con formato profesional.
+          </p>
+        </div>
+
+        <div class="flex flex-col items-center text-center">
+          <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-6 shadow-xl">
+            <span class="material-icons text-slate-800 text-3xl font-bold">file_download</span>
+          </div>
+          <h4 class="text-xl font-bold mb-3">Descarga tus archivos</h4>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Obtén dos documentos Word: uno con las respuestas completas y otro parcial para tus estudiantes.
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-slate-900 py-10 px-4 text-slate-400 border-t border-slate-800">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-center items-center gap-6 text-sm">
+
+      <div class="flex items-center gap-2">
+        <span class="material-icons text-lg">mail</span>
+        <span>jaramillocaleb3@gmail.com</span>
+      </div>
+
+      <span class="hidden md:inline text-slate-700">|</span>
+
+      <div class="flex items-center gap-2">
+        <span class="material-icons text-lg">call</span>
+        <span>+57 300 384 0344</span>
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+
+</html>

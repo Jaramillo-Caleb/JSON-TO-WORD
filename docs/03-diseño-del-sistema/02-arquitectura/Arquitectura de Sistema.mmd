@@ -1,0 +1,23 @@
+---
+config:
+  theme: redux-dark
+---
+graph TD
+    User((Educador))
+    
+    subgraph "Docker Host"
+        subgraph "Contenedor Frontend (Vite)"
+            ReactApp[React UI + Tailwind]
+        end
+        
+        subgraph "Contenedor Backend (Python)"
+            API[API Endpoint]
+            Logic[Procesador Clean Arch]
+        end
+    end
+    
+    User -->|HTTPS| ReactApp
+    ReactApp -->|REST API / JSON| API
+    API --> Logic
+    Logic -->|Retorna .docx| ReactApp
+    ReactApp -->|Descarga local| User

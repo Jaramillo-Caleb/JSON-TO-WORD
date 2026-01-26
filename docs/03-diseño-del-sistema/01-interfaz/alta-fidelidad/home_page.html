@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html class="dark" lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#0d59f2",
+            "dark-bg": "#06181b",
+            "darker-bg": "#0a1118",
+            "coffee": "#FFDD00"
+          },
+          fontFamily: {
+            "display": ["Lexend", "sans-serif"]
+          },
+        },
+      },
+    }
+  </script>
+  <title>JSON to Word - Convertidor</title>
+</head>
+
+<body class="bg-gradient-to-b from-dark-bg to-darker-bg font-display text-white min-h-screen flex flex-col">
+
+  <div
+    class="fixed bottom-8 right-8 z-50 flex items-center gap-2 bg-[#4E342E] text-[#F5E9DA] px-5 py-3 rounded-full shadow-2xl border border-[#3E2723] transition-all duration-300 ease-out hover:px-7 group">
+    <span class="material-icons text-[#D7B899] transition-transform duration-300 group-hover:rotate-12">
+      coffee
+    </span>
+
+    <span class="font-bold text-sm tracking-wide whitespace-nowrap">
+      Invítame a un café
+    </span>
+  </div>
+
+
+  <header class="pt-20 pb-12 px-6 text-center">
+    <h1 class="text-5xl md:text-6xl font-bold tracking-tight mb-4">
+      JSON TO WORD
+    </h1>
+    <p class="text-slate-300 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+      Convierte tus archivos JSON de NotebookLM en documentos Word profesionales para exámenes y hojas de respuestas.
+    </p>
+  </header>
+
+  <main class="flex-grow px-4 pb-20">
+    <div class="max-w-4xl mx-auto bg-[#1B2A3D] rounded-[2rem] p-8 md:p-12 shadow-2xl">
+
+      <div
+        class="border-2 border-dashed border-slate-500/40 rounded-2xl p-10 flex flex-col items-center justify-center text-center mb-8">
+        <div class="w-14 h-14 bg-slate-700/40 rounded-full flex items-center justify-center mb-4">
+          <span class="material-icons text-slate-200">upload</span>
+        </div>
+        <h3 class="text-slate-100 text-xl font-bold mb-1">
+          Arrastra tu archivo JSON aquí
+        </h3>
+        <p class="text-slate-300 text-sm mb-6">
+          o haz clic para seleccionar
+        </p>
+
+        <button
+          class="bg-transparent border border-slate-400/40 text-slate-100 px-6 py-2.5 rounded-lg flex items-center gap-2 font-medium">
+          <span class="material-icons text-xl">description</span>
+          Seleccionar archivo
+        </button>
+      </div>
+
+      <div class="relative flex py-5 items-center">
+        <div class="flex-grow border-t border-slate-500/30"></div>
+        <span class="flex-shrink mx-4 text-slate-300 text-sm font-medium">
+          o pega tu JSON
+        </span>
+        <div class="flex-grow border-t border-slate-500/30"></div>
+      </div>
+
+      <div class="mb-8">
+        <textarea
+          class="w-full h-48 p-6 bg-[#22364f] border border-slate-500/30 rounded-2xl text-slate-100 font-mono text-sm outline-none resize-none"
+          placeholder='{"ejemplo": "Pega tu JSON aquí..."}'></textarea>
+      </div>
+
+      <button class="w-full bg-[#334155] text-white py-4 rounded-xl text-lg font-bold shadow-lg">
+        Convertir a Word
+      </button>
+
+    </div>
+
+    <div class="max-w-5xl mx-auto mt-32">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">Cómo funciona</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div class="flex flex-col items-center text-center">
+          <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-6 shadow-xl">
+            <span class="material-icons text-slate-800 text-3xl font-bold">upload_file</span>
+          </div>
+          <h4 class="text-xl font-bold mb-3">Importa tu JSON</h4>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Arrastra, pega o selecciona tu archivo JSON de NotebookLM directamente en nuestra plataforma.
+          </p>
+        </div>
+
+        <div class="flex flex-col items-center text-center">
+          <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-6 shadow-xl">
+            <span class="material-icons text-slate-800 text-3xl font-bold">settings</span>
+          </div>
+          <h4 class="text-xl font-bold mb-3">Procesamiento automático</h4>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Nuestro sistema convierte el JSON en documentos Word estructurados con formato profesional.
+          </p>
+        </div>
+
+        <div class="flex flex-col items-center text-center">
+          <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-6 shadow-xl">
+            <span class="material-icons text-slate-800 text-3xl font-bold">file_download</span>
+          </div>
+          <h4 class="text-xl font-bold mb-3">Descarga tus archivos</h4>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Obtén dos documentos Word: uno con las respuestas completas y otro parcial para tus estudiantes.
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-slate-900 py-10 px-4 text-slate-400 border-t border-slate-800">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-center items-center gap-6 text-sm">
+
+      <div class="flex items-center gap-2">
+        <span class="material-icons text-lg">mail</span>
+        <span>jaramillocaleb3@gmail.com</span>
+      </div>
+
+      <span class="hidden md:inline text-slate-700">|</span>
+
+      <div class="flex items-center gap-2">
+        <span class="material-icons text-lg">call</span>
+        <span>+57 300 384 0344</span>
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+
+</html>
