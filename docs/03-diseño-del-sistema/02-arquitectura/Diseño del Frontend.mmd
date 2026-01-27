@@ -1,33 +1,55 @@
 ---
 config:
   theme: redux-dark
-  layout: dagre
 ---
 flowchart TB
- subgraph subGraph0["App Root (App.jsx)"]
-        Header["Header Component"]
-        Main["Main Layout"]
-        Footer["Footer Component"]
-        FloatBtn["Floating Donation Button"]
-  end
- subgraph subGraph1["Main Layout (Vistas)"]
-        Hero["Hero: Título y Propósito"]
-        Instructions["How it Works: Pasos 1-2-3"]
-        Converter["Converter Container"]
-  end
- subgraph subGraph2["Converter Container (Lógica)"]
-        Dropzone["File Uploader: Drag & Drop"]
-        Status["Status Handler: Cargando/Error"]
-        DownloadSection["Download Actions: Botones Word"]
-  end
- subgraph subGraph3["Modals & Global"]
-        QRModal["Donation Modal: QRs Nequi/DaviPlata"]
-        Notification["Toast/Alerts: Feedback"]
-  end
-    Header --- Main
-    Main --- Footer
-    FloatBtn ==> QRModal
-    Dropzone -- Envía JSON --> API_Service["API Service: Axios/Fetch"]
-    API_Service -- Recibe Blobs --> DownloadSection
-    Converter --- Status
-    Status --- Notification
+
+%% =========================
+%% App Root & Routing
+%% =========================
+subgraph AppRoot["App.tsx / Router"]
+  HomeRoute["Route /"]
+  DonateRoute["Route /donar"]
+end
+
+HomeRoute --> HomePage
+DonateRoute --> DonationPage
+
+%% =========================
+%% Home Page
+%% =========================
+subgraph HomePage["HomePage"]
+  Header["Header\n(Título + Descripción)"]
+  Steps["Steps\n(Paso a Paso)"]
+  ContentBox["ContentBox\n(Contenedor Variable)"]
+  FooterHome["Footer"]
+  FloatingBtn["Floating Donation Button"]
+end
+
+Header --> Steps
+Steps --> ContentBox
+ContentBox --> Converter
+FloatingBtn -. navigate('/donar') .-> DonateRoute
+FooterHome --- HomePage
+
+%% =========================
+%% Converter (solo contenido del cuadro)
+%% =========================
+subgraph Converter["Converter"]
+  Dropzone["Dropzone\n(Upload JSON)"]
+  Status["Status\n(Cargando / Error)"]
+  Download["DownloadSection\n(Word)"]
+end
+
+Dropzone --> Status
+Status --> Download
+
+%% =========================
+%% Donation Page
+%% =========================
+subgraph DonationPage["DonationPage"]
+  DonationContent["DonationContent\n(QR + Info)"]
+  FooterDonate["Footer (reutilizado)"]
+end
+
+DonationContent --> FooterDonate

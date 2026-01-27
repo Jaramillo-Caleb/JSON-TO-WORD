@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   api:
     container_name: json_to_word_backend
@@ -7,12 +5,33 @@ services:
       context: ./backend      
       dockerfile: Dockerfile
     ports:
-      - "443:8443"            
+      - "8443:8443"            
     volumes:
       - ./certs:/etc/ssl/certs_app
+    networks:         
+      - app-network    
     command: >
       uvicorn main:app 
       --host 0.0.0.0 
       --port 8443 
       --ssl-keyfile /etc/ssl/certs_app/localhost+1-key.pem 
       --ssl-certfile /etc/ssl/certs_app/localhost+1.pem
+
+  frontend:
+    container_name: json_to_word_frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./certs:/etc/nginx/ssl
+    depends_on:
+      - api
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
