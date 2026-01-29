@@ -2,7 +2,7 @@ services:
   api:
     container_name: json_to_word_backend
     build:
-      context: ./backend      
+      context: ./api      
       dockerfile: Dockerfile
     ports:
       - "8443:8443"            
