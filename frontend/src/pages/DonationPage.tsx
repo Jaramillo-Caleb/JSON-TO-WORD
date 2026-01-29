@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Footer } from '../components/layout/Footer';
+import QRNequi from '../assets/QRs/NequiQR.png';
 
 export const DonationPage = () => {
   return (
@@ -53,15 +54,15 @@ export const DonationPage = () => {
             </h4>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-3xl mb-12">
+        <div className="flex flex-col md:flex-row justify-center gap-8 w-full max-w-3xl mb-12">
             {/* Nequi */}
             <div className="bg-white dark:bg-slate-800/50 p-6 rounded-xl border border-slate-200 dark:border-white/10 flex flex-col items-center shadow-lg">
                 <div className="w-full mb-4 flex justify-between items-center">
                     <span className="font-bold text-slate-800 dark:text-white">Nequi</span>
                 </div>
-                <div className="bg-white p-3 rounded-lg mb-4 shadow-inner">
+                <div className="bg-white p-1 rounded-lg mb-4">
                     <img 
-                        src="https://api.qrserver.com/v1/create-qr-code/?size=192x192&data=NequiSimulado"
+                        src={QRNequi}
                         alt="QR Nequi" 
                         className="w-48 h-48 object-contain"
                     />
@@ -71,12 +72,12 @@ export const DonationPage = () => {
                 </p>
             </div>
 
-            {/* DaviPlata */}
+            {/* DaviPlata
             <div className="bg-white dark:bg-slate-800/50 p-6 rounded-xl border border-slate-200 dark:border-white/10 flex flex-col items-center shadow-lg">
                 <div className="w-full mb-4 flex justify-between items-center">
                     <span className="font-bold text-slate-800 dark:text-white">Daviplata</span>
                 </div>
-                <div className="bg-white p-3 rounded-lg mb-4 shadow-inner">
+                <div className="bg-white p-1 rounded-lg mb-4">
                     <img 
                         src="https://api.qrserver.com/v1/create-qr-code/?size=192x192&data=DaviplataSimulado" 
                         alt="QR Daviplata" 
@@ -87,6 +88,7 @@ export const DonationPage = () => {
                     Escanea desde tu app Daviplata
                 </p>
             </div>
+            */}
         </div>
       </main>
 

@@ -20,7 +20,10 @@ export const HomePage = () => {
     setStatus('processing');
     try {
       
-      const response = await convertJsonToWord(file);
+      const [response] = await Promise.all([
+        convertJsonToWord(file),
+        new Promise((resolve) => setTimeout(resolve, 3000))
+      ]);
       
       if (response.status === 'success') {
         setResultFiles(response.files);
