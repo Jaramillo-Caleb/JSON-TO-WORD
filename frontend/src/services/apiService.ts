@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = '/convert/all'
+const API_URL = '/api/convert/all'
 
 export const convertJsonToWord = async (file: File) => {
   const formData = new FormData();
